@@ -66,7 +66,7 @@ function StudioAlaide() {
     </header>
 
     <section id="inicio" className="relative border-b border-border/50 bg-onyx">
-      <div className="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:py-16">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 lg:min-h-[760px] lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:py-16">
         <div className="relative z-10">
           <div className="mb-7 inline-flex items-center gap-2 border border-primary/40 bg-primary/5 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-gold-soft"><Sparkles className="size-4" /> Sua Beleza, Nossa Realeza</div>
           <h1 className="max-w-3xl font-display text-4xl leading-[1.12] text-foreground sm:text-5xl lg:text-6xl">A sofisticação do <span className="gold-text">loiro perfeito</span> e a assinatura do seu estilo.</h1>
