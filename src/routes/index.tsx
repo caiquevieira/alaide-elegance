@@ -16,6 +16,8 @@ import facade from "@/assets/Local.jpeg.asset.json";
 
 const whatsapp = "https://wa.me/5511981340680?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20atendimento%20no%20Studio%20Alaide.";
 const maps = "https://www.google.com/maps/search/?api=1&query=Av.%20General%20Mac%20Arthur%2C%201392%20Jaguar%C3%A9%20S%C3%A3o%20Paulo";
+const trinks = "https://www.trinks.com/alaide-hair-estetica-e-beleza";
+const navLinks = [["Início","inicio"],["Especialidades","especialidades"],["Galeria Real","galeria"],["Serviços","servicos"],["Horários & Local","local"]] as const;
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
