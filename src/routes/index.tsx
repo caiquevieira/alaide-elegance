@@ -60,11 +60,11 @@ function StudioAlaide() {
     <header className="sticky top-0 z-50 border-b border-border/70 bg-onyx/95 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
         <a href="#inicio" aria-label="Studio Alaide - Início"><img src={logo.url} alt="Studio Alaide" className="h-16 w-auto object-contain" /></a>
-        <nav aria-label="Navegação principal" className="hidden items-center gap-7 lg:flex">{[["Início","inicio"],["Especialidades","especialidades"],["Galeria Real","galeria"],["Serviços","servicos"],["Horários & Local","local"]].map(([label,id]) => <a key={id} href={`#${id}`} className="text-xs font-semibold uppercase text-muted-foreground transition-colors hover:text-primary">{label}</a>)}</nav>
-        <Button asChild variant="luxury" size="lg" className="hidden lg:inline-flex"><a href={whatsapp} target="_blank" rel="noreferrer">Agendar Horário</a></Button>
-        <Button asChild variant="luxuryOutline" size="icon" className="lg:hidden"><a href="#menu-mobile" aria-label="Abrir navegação"><Menu /></a></Button>
+        <nav aria-label="Navegação principal" className="hidden items-center gap-7 lg:flex">{navLinks.map(([label,id]) => <a key={id} href={`#${id}`} className="text-xs font-semibold uppercase text-muted-foreground transition-colors hover:text-primary">{label}</a>)}</nav>
+        <Button asChild variant="luxury" size="lg" className="hidden lg:inline-flex"><a href={trinks} target="_blank" rel="noreferrer">Agendar Horário</a></Button>
+        <Button variant="luxuryOutline" size="icon" className="lg:hidden" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="menu-mobile" aria-label={open ? "Fechar navegação" : "Abrir navegação"}>{open ? <X /> : <Menu />}</Button>
       </div>
-      <nav id="menu-mobile" className="flex gap-5 overflow-x-auto border-t border-border/50 px-5 py-3 lg:hidden">{[["Início","inicio"],["Especialidades","especialidades"],["Galeria","galeria"],["Serviços","servicos"],["Local","local"]].map(([label,id]) => <a key={id} href={`#${id}`} className="shrink-0 text-[11px] font-bold uppercase text-muted-foreground">{label}</a>)}</nav>
+      {open && <nav id="menu-mobile" className="flex flex-col gap-1 border-t border-border/50 bg-onyx px-5 py-4 lg:hidden">{navLinks.map(([label,id]) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)} className="border-b border-border/30 py-3 text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">{label}</a>)}<Button asChild variant="luxury" size="lg" className="mt-4"><a href={whatsapp} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>Agendar pelo WhatsApp</a></Button></nav>}
     </header>
 
     <section id="inicio" className="relative border-b border-border/50 bg-onyx">
