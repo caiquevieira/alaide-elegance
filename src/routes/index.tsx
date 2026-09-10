@@ -35,6 +35,7 @@ const specialties = [
   [Sparkles, "Loiros de Alta Precisão", "Do perolado ao platinado com preservação rigorosa da fibra capilar."],
   [Star, "Morena Iluminada", "Tons amendoados, doces e quentes para quem busca elegância com baixa manutenção."],
   [Scissors, "Penteados & Produções", "Penteados refinados para festas, formaturas e eventos com acabamento impecável."],
+  [Sparkles, "Alisamentos & Progressivas", "Alinhamento impecável com efeito natural, brilho espelhado e máxima proteção da saúde dos fios."],
 ] as const;
 
 const gallery = [
