@@ -94,6 +94,6 @@ function StudioAlaide() {
 
     <footer className="border-t border-border bg-onyx"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-5 py-10 text-center sm:flex-row sm:text-left lg:px-8"><div><p className="font-display text-lg text-primary">Studio Alaide</p><p className="mt-1 text-xs text-muted-foreground">Sua Beleza, Nossa Realeza</p></div><p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Studio Alaide. Todos os direitos reservados.</p></div></footer>
 
-    <a href={whatsapp} target="_blank" rel="noreferrer" aria-label="Agendar pelo WhatsApp" title="Agendar pelo WhatsApp" className="whatsapp-pulse fixed bottom-5 right-5 z-50 flex size-14 items-center justify-center rounded-full border border-primary bg-primary text-primary-foreground shadow-luxury transition-transform hover:scale-105"><Phone className="size-6"/></a>
+    <a href={whatsapp} target="_blank" rel="noreferrer" aria-label="Agendar pelo WhatsApp" title="Agendar pelo WhatsApp" className="whatsapp-pulse fixed bottom-6 right-4 z-50 flex size-14 items-center justify-center rounded-full border border-primary bg-primary text-primary-foreground shadow-luxury transition-transform hover:scale-105"><Phone className="size-6"/></a>
   </main>;
 }
