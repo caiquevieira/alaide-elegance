@@ -39,10 +39,14 @@ const specialties = [
 ] as const;
 
 const gallery = [
-  [curls.url, "Cachos Definidos & Mechas Iluminadas"], [updo.url, "Penteado Semipreso Romântico"],
-  [golden.url, "Loiro Dourado em Cachos Marcados"], [pearl.url, "Loiro Platinado & Perolado Suave"],
-  [bob.url, "Corte Bob em Camadas & Mechas"], [brunette.url, "Morena Iluminada em Fios Longos"],
-  [medium.url, "Corte Médio com Pontas Modeladas"], [ruivo.url, "Ruivo Iluminado & Corte em Camadas"],
+  [g1.url, "Loiro Platinado em Ondas Longas", "Loiro Platinado"],
+  [g2.url, "Loiro Perolado com Raiz Esfumada", "Loiro Perolado"],
+  [g3.url, "Mechas Mel em Fios Alinhados", "Morena Iluminada"],
+  [g4.url, "Balayage Caramelo com Ondas Amplas", "Ondas & Finalização"],
+  [g5.url, "Loiro Perolado com Movimento Natural", "Loiro Perolado"],
+  [g6.url, "Balayage Iluminado em Fios Médios", "Morena Iluminada"],
+  [g7.url, "Morena Iluminada com Cachos Definidos", "Morena Iluminada"],
+  [g8.url, "Ondas Volumosas de Alta Precisão", "Ondas & Finalização"],
 ] as const;
 
 const services = [
