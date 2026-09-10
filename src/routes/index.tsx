@@ -56,6 +56,7 @@ function SectionTitle({ eyebrow, children }: { eyebrow: string; children: React.
 }
 
 function StudioAlaide() {
+  const [open, setOpen] = useState(false);
   return <main className="overflow-hidden bg-background">
     <header className="sticky top-0 z-50 border-b border-border/70 bg-onyx/95 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
