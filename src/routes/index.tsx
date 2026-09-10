@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, CalendarDays, Car, Clock3, Instagram, MapPin, Menu, Phone, Scissors, Sparkles, Star, WandSparkles } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, Car, Clock3, Instagram, MapPin, Menu, Phone, Scissors, Sparkles, Star, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ruivo from "@/assets/ruivo-iluminado.jpg.asset.json";
 import logo from "@/assets/Logo_v2.png.asset.json";
 import hero from "@/assets/SaveClip.App_625051777_18106963369702980_5614616476454664082_n.jpg.asset.json";
 import curls from "@/assets/SaveClip.App_649187853_17978342495987408_8135828874252907407_n.jpg.asset.json";
