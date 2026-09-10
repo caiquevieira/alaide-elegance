@@ -31,7 +31,6 @@ export const Route = createFileRoute("/")({
 
 const specialties = [
   [Sparkles, "Loiros de Alta Precisão", "Do perolado ao platinado com preservação rigorosa da fibra capilar."],
-  [WandSparkles, "Cacheados & Definição", "Mechas e tratamentos especializados para valorizar a curvatura natural dos cachos com hidratação máxima."],
   [Star, "Morena Iluminada", "Tons amendoados, doces e quentes para quem busca elegância com baixa manutenção."],
   [Scissors, "Penteados & Produções", "Penteados refinados para festas, formaturas e eventos com acabamento impecável."],
 ] as const;
@@ -40,7 +39,7 @@ const gallery = [
   [curls.url, "Cachos Definidos & Mechas Iluminadas"], [updo.url, "Penteado Semipreso Romântico"],
   [golden.url, "Loiro Dourado em Cachos Marcados"], [pearl.url, "Loiro Platinado & Perolado Suave"],
   [bob.url, "Corte Bob em Camadas & Mechas"], [brunette.url, "Morena Iluminada em Fios Longos"],
-  [medium.url, "Corte Médio com Pontas Modeladas"],
+  [medium.url, "Corte Médio com Pontas Modeladas"], [ruivo.url, "Ruivo Iluminado & Corte em Camadas"],
 ] as const;
 
 const services = [
@@ -48,7 +47,6 @@ const services = [
   ["02", "Cortes & Visagismo", "Cortes femininos curtos, médios e longos que acompanham o caimento natural."],
   ["03", "Tratamento & Saúde Capilar", "Cronograma capilar, reposição de massa e nutrição profunda para fios pós-química."],
   ["04", "Penteados & Eventos", "Penteados clássicos, despojados e semipresos com alta durabilidade."],
-  ["05", "Manicure, Pedicure & Estética", "Cuidados completos de beleza para otimizar seu tempo em um só espaço."],
 ] as const;
 
 function SectionTitle({ eyebrow, children }: { eyebrow: string; children: React.ReactNode }) {
