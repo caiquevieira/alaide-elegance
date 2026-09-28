@@ -80,6 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Studio Alaide | Beleza e Estética no Jaguaré" },
       { name: "description", content: "Studio Alaide: mechas, loiros, cortes, penteados e estética no Jaguaré, São Paulo. Agende seu horário com Alaíde Lopes." },
       { name: "author", content: "Studio Alaide" },
+      { name: "robots", content: "noindex, nofollow" },
       { property: "og:title", content: "Studio Alaide | Sua Beleza, Nossa Realeza" },
       { property: "og:description", content: "Colorimetria, mechas, visagismo e beleza no Jaguaré, São Paulo." },
       { property: "og:type", content: "website" },
