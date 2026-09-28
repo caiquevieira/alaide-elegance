@@ -2,17 +2,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowRight, Car, Clock3, Instagram, MapPin, Menu, Phone, Scissors, Sparkles, Star, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/Logo_v2.png.asset.json";
-import hero from "@/assets/SaveClip.App_625051777_18106963369702980_5614616476454664082_n.jpg.asset.json";
-import g1 from "@/assets/g-17-02-08.jpeg.asset.json";
-import g2 from "@/assets/g-17-02-09_2.jpeg.asset.json";
-import g3 from "@/assets/g-17-02-09_3.jpeg.asset.json";
-import g4 from "@/assets/g-17-02-08_3.jpeg.asset.json";
-import g5 from "@/assets/g-17-02-09.jpeg.asset.json";
-import g6 from "@/assets/g-17-02-08_2.jpeg.asset.json";
-import g7 from "@/assets/g-17-02-08_1.jpeg.asset.json";
-import g8 from "@/assets/g-17-02-09_1.jpeg.asset.json";
-import facade from "@/assets/Local.jpeg.asset.json";
+import logo from "@/assets/Logo_v2.png";
+import hero from "@/assets/SaveClip.App_625051777_18106963369702980_5614616476454664082_n.jpg";
+import g1 from "@/assets/g-17-02-08.jpeg";
+import g2 from "@/assets/g-17-02-09_2.jpeg";
+import g3 from "@/assets/g-17-02-09_3.jpeg";
+import g4 from "@/assets/g-17-02-08_3.jpeg";
+import g5 from "@/assets/g-17-02-09.jpeg";
+import g6 from "@/assets/g-17-02-08_2.jpeg";
+import g7 from "@/assets/g-17-02-08_1.jpeg";
+import g8 from "@/assets/g-17-02-09_1.jpeg";
+import facade from "@/assets/Local.jpeg";
 
 const whatsapp = "https://wa.me/5511981340680?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20atendimento%20no%20Studio%20Alaide.";
 const maps = "https://www.google.com/maps/search/?api=1&query=Av.%20General%20Mac%20Arthur%2C%201392%20Jaguar%C3%A9%20S%C3%A3o%20Paulo";
@@ -39,14 +39,14 @@ const specialties = [
 ] as const;
 
 const gallery = [
-  [g1.url, "Loiro Platinado em Ondas Longas", "Loiro Platinado"],
-  [g2.url, "Loiro Perolado com Raiz Esfumada", "Loiro Perolado"],
-  [g3.url, "Mechas Mel em Fios Alinhados", "Morena Iluminada"],
-  [g4.url, "Balayage Caramelo com Ondas Amplas", "Ondas & Finalização"],
-  [g5.url, "Loiro Perolado com Movimento Natural", "Loiro Perolado"],
-  [g6.url, "Balayage Iluminado em Fios Médios", "Morena Iluminada"],
-  [g7.url, "Morena Iluminada com Cachos Definidos", "Morena Iluminada"],
-  [g8.url, "Ondas Volumosas de Alta Precisão", "Ondas & Finalização"],
+  [g1, "Loiro Platinado em Ondas Longas", "Loiro Platinado"],
+  [g2, "Loiro Perolado com Raiz Esfumada", "Loiro Perolado"],
+  [g3, "Mechas Mel em Fios Alinhados", "Morena Iluminada"],
+  [g4, "Balayage Caramelo com Ondas Amplas", "Ondas & Finalização"],
+  [g5, "Loiro Perolado com Movimento Natural", "Loiro Perolado"],
+  [g6, "Balayage Iluminado em Fios Médios", "Morena Iluminada"],
+  [g7, "Morena Iluminada com Cachos Definidos", "Morena Iluminada"],
+  [g8, "Ondas Volumosas de Alta Precisão", "Ondas & Finalização"],
 ] as const;
 
 const services = [
@@ -65,7 +65,7 @@ function StudioAlaide() {
   return <main className="overflow-hidden bg-background">
     <header className="sticky top-0 z-50 border-b border-border/70 bg-onyx/95 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-        <a href="#inicio" aria-label="Studio Alaide - Início"><img src={logo.url} alt="Studio Alaide" className="h-16 w-auto object-contain" /></a>
+        <a href="#inicio" aria-label="Studio Alaide - Início"><img src={logo} alt="Studio Alaide" className="h-16 w-auto object-contain" /></a>
         <nav aria-label="Navegação principal" className="hidden items-center gap-7 lg:flex">{navLinks.map(([label,id]) => <a key={id} href={`#${id}`} className="text-xs font-semibold uppercase text-muted-foreground transition-colors hover:text-primary">{label}</a>)}</nav>
         <Button asChild variant="luxury" size="lg" className="hidden lg:inline-flex"><a href={trinks} target="_blank" rel="noreferrer">Agendar Horário</a></Button>
         <Button variant="luxuryOutline" size="icon" className="lg:hidden" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="menu-mobile" aria-label={open ? "Fechar navegação" : "Abrir navegação"}>{open ? <X /> : <Menu />}</Button>
@@ -85,7 +85,7 @@ function StudioAlaide() {
           </div>
           <div className="mt-10 grid w-full max-w-full gap-3 break-words border-t border-border/60 pt-7 text-xs text-muted-foreground sm:grid-cols-3"><span className="flex gap-2"><Star className="size-4 shrink-0 text-primary" />Atendimento com hora marcada e diagnóstico capilar</span><span className="flex gap-2"><Car className="size-4 shrink-0 text-primary" />Estacionamento próprio na porta</span><span className="flex gap-2"><MapPin className="size-4 shrink-0 text-primary" />Av. General Mac Arthur, 1392 - Jaguaré</span></div>
         </div>
-        <div className="relative mx-auto w-full max-w-lg lg:mr-0"><div className="absolute -left-5 top-8 h-full w-full border border-primary/30" /><img src={hero.url} alt="Loiro de alta precisão com ondas longas realizado no Studio Alaide" className="luxe-glow relative aspect-[4/5] w-full object-cover object-center" /><div className="absolute -bottom-5 right-4 border border-primary/50 bg-onyx px-5 py-3 text-xs uppercase tracking-[0.18em] text-gold-soft">Colorimetria • Visagismo</div></div>
+        <div className="relative mx-auto w-full max-w-lg lg:mr-0"><div className="absolute -left-5 top-8 h-full w-full border border-primary/30" /><img src={hero} alt="Loiro de alta precisão com ondas longas realizado no Studio Alaide" className="luxe-glow relative aspect-[4/5] w-full object-cover object-center" /><div className="absolute -bottom-5 right-4 border border-primary/50 bg-onyx px-5 py-3 text-xs uppercase tracking-[0.18em] text-gold-soft">Colorimetria • Visagismo</div></div>
       </div>
     </section>
 
@@ -95,7 +95,7 @@ function StudioAlaide() {
 
     <section id="servicos" className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8"><SectionTitle eyebrow="Cuidado completo">Serviços do Studio</SectionTitle><div className="grid w-full gap-4 md:grid-cols-2">{services.map(([number,title,text]) => <article key={title} className="border border-border bg-card p-7"><span className="text-xs font-bold tracking-[.2em] text-primary">{number}</span><h3 className="mt-8 font-display text-2xl text-foreground">{title}</h3><div className="my-5 h-px w-10 bg-primary/60" /><p className="text-sm leading-7 text-muted-foreground">{text}</p></article>)}</div><div className="mt-12 flex justify-center"><Button asChild variant="luxury" size="lg" className="h-12 w-full px-8 text-sm font-medium sm:w-fit"><a href={trinks} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2"><span className="sm:hidden">Reservar Atendimento Online</span><span className="hidden sm:inline">Reservar Meu Atendimento Online</span> <ArrowRight className="shrink-0" /></a></Button></div></section>
 
-    <section id="local" className="border-t border-border/50 bg-card"><div className="mx-auto grid max-w-7xl gap-14 px-4 py-24 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8"><div><SectionTitle eyebrow="Venha viver essa experiência">Horários & Local</SectionTitle><div className="space-y-6 text-sm text-muted-foreground"><div className="flex gap-4"><MapPin className="mt-1 size-5 shrink-0 text-primary"/><div><strong className="block text-foreground">Studio Alaide</strong><span>Av. General Mac Arthur, 1392 – Jaguaré / Vila Lageado, São Paulo - SP (CEP: 05338-001).</span></div></div><div className="flex gap-4"><Clock3 className="mt-1 size-5 shrink-0 text-primary"/><dl className="grid w-full grid-cols-[1fr_auto] gap-x-6 gap-y-2"><dt>Terça e Quarta</dt><dd className="text-foreground">10:00 às 19:00</dd><dt>Quinta</dt><dd className="text-foreground">09:00 às 19:00</dd><dt>Sexta e Sábado</dt><dd className="text-foreground">09:00 às 18:00</dd><dt>Domingo e Segunda</dt><dd className="text-foreground">Fechado</dd></dl></div><div className="flex gap-4"><Phone className="mt-1 size-5 shrink-0 text-primary"/><p><a href={whatsapp} target="_blank" rel="noreferrer" className="text-foreground hover:text-primary">WhatsApp: (11) 98134-0680</a></p></div><div className="flex gap-4"><Instagram className="size-5 shrink-0 text-primary"/><a href="https://instagram.com/studio_alaide" target="_blank" rel="noreferrer" className="text-foreground hover:text-primary">@studio_alaide</a></div></div><Button asChild variant="luxury" size="lg" className="mt-9 h-12 px-6 py-3 text-sm font-medium"><a href={maps} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2"><MapPin /> Abrir Rota no Google Maps</a></Button></div><figure className="relative"><img src={facade.url} alt="Fachada do Studio Alaide na Avenida General Mac Arthur, Jaguaré" loading="lazy" className="luxe-glow aspect-[4/3] w-full object-cover"/><figcaption className="absolute bottom-4 left-4 right-4 flex items-center gap-2 border border-primary/50 bg-onyx/95 px-4 py-3 text-xs font-semibold uppercase tracking-[.1em] text-gold-soft"><Car className="size-4"/> Estacionamento privativo na porta</figcaption></figure></div></section>
+    <section id="local" className="border-t border-border/50 bg-card"><div className="mx-auto grid max-w-7xl gap-14 px-4 py-24 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8"><div><SectionTitle eyebrow="Venha viver essa experiência">Horários & Local</SectionTitle><div className="space-y-6 text-sm text-muted-foreground"><div className="flex gap-4"><MapPin className="mt-1 size-5 shrink-0 text-primary"/><div><strong className="block text-foreground">Studio Alaide</strong><span>Av. General Mac Arthur, 1392 – Jaguaré / Vila Lageado, São Paulo - SP (CEP: 05338-001).</span></div></div><div className="flex gap-4"><Clock3 className="mt-1 size-5 shrink-0 text-primary"/><dl className="grid w-full grid-cols-[1fr_auto] gap-x-6 gap-y-2"><dt>Terça e Quarta</dt><dd className="text-foreground">10:00 às 19:00</dd><dt>Quinta</dt><dd className="text-foreground">09:00 às 19:00</dd><dt>Sexta e Sábado</dt><dd className="text-foreground">09:00 às 18:00</dd><dt>Domingo e Segunda</dt><dd className="text-foreground">Fechado</dd></dl></div><div className="flex gap-4"><Phone className="mt-1 size-5 shrink-0 text-primary"/><p><a href={whatsapp} target="_blank" rel="noreferrer" className="text-foreground hover:text-primary">WhatsApp: (11) 98134-0680</a></p></div><div className="flex gap-4"><Instagram className="size-5 shrink-0 text-primary"/><a href="https://instagram.com/studio_alaide" target="_blank" rel="noreferrer" className="text-foreground hover:text-primary">@studio_alaide</a></div></div><Button asChild variant="luxury" size="lg" className="mt-9 h-12 px-6 py-3 text-sm font-medium"><a href={maps} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2"><MapPin /> Abrir Rota no Google Maps</a></Button></div><figure className="relative"><img src={facade} alt="Fachada do Studio Alaide na Avenida General Mac Arthur, Jaguaré" loading="lazy" className="luxe-glow aspect-[4/3] w-full object-cover"/><figcaption className="absolute bottom-4 left-4 right-4 flex items-center gap-2 border border-primary/50 bg-onyx/95 px-4 py-3 text-xs font-semibold uppercase tracking-[.1em] text-gold-soft"><Car className="size-4"/> Estacionamento privativo na porta</figcaption></figure></div></section>
 
     <footer className="border-t border-border bg-onyx"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-5 py-10 text-center sm:flex-row sm:text-left lg:px-8"><div><p className="font-display text-lg text-primary">Studio Alaide</p><p className="mt-1 text-xs text-muted-foreground">Sua Beleza, Nossa Realeza</p></div><p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Studio Alaide. Todos os direitos reservados.</p></div></footer>
 

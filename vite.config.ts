@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Publicado como GitHub Pages de projeto em /alaide-elegance/
+  vite: {
+    base: "/alaide-elegance/",
+  },
 });
