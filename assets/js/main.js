@@ -1,8 +1,5 @@
-/* IDs vazios = nenhum script de terceiros é carregado e o aviso de cookies não aparece. */
-var CONFIG = {
-  ga4Id: "G-JT2LZ0N7EG",
-};
-
+/* O gtag é carregado no <head> do index.html com consentimento negado;
+   aqui o aviso de cookies só atualiza o Consent Mode. */
 var CHAVE_CONSENTIMENTO = "ul-consentimento";
 
 // data-track → evento do GA4
@@ -12,8 +9,6 @@ var EVENTOS = {
   instagram: { nome: "click_instagram" },
   "como-chegar": { nome: "click_como_chegar" },
 };
-
-var analyticsCarregado = false;
 
 (function () {
   var toggle = document.getElementById("menu-toggle");
@@ -59,29 +54,22 @@ function salvarConsentimento(valor) {
   if (window.gtag) window.gtag("consent", "update", sinaisConsentimento(valor === "aceito"));
 }
 
-function carregarAnalytics() {
-  if (analyticsCarregado || !CONFIG.ga4Id) return;
-  analyticsCarregado = true;
-
-  var s = document.createElement("script");
-  s.async = true;
-  s.src = "https://www.googletagmanager.com/gtag/js?id=" + CONFIG.ga4Id;
-  document.head.appendChild(s);
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function () {
-    window.dataLayer.push(arguments);
-  };
-  // Só chega aqui com a escolha "aceito" salva ou recém-feita
-  window.gtag("consent", "default", sinaisConsentimento(true));
-  window.gtag("js", new Date());
-  window.gtag("config", CONFIG.ga4Id);
+// Ao recusar depois de ter aceitado, os cookies _ga já gravados ficariam para trás
+function apagarCookiesGa() {
+  document.cookie.split(";").forEach(function (c) {
+    var nome = c.split("=")[0].trim();
+    if (nome.indexOf("_ga") !== 0) return;
+    ["", "; domain=." + location.hostname.replace(/^www\./, "")].forEach(function (dominio) {
+      document.cookie = nome + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/" + dominio;
+    });
+  });
 }
 
 (function () {
   var banner = document.getElementById("consentimento");
   var botoesAbrir = document.querySelectorAll("[data-abrir-consentimento]");
 
-  if (!CONFIG.ga4Id || !banner) {
+  if (!window.gtag || !banner) {
     botoesAbrir.forEach(function (b) {
       b.hidden = true;
     });
@@ -97,21 +85,17 @@ function carregarAnalytics() {
     document.body.classList.remove("consentimento-aberto");
   }
 
-  var escolha = lerConsentimento();
-  if (escolha === "aceito") carregarAnalytics();
-  else if (!escolha) abrir();
+  if (!lerConsentimento()) abrir();
 
   banner.querySelector('[data-consentimento="aceitar"]').addEventListener("click", function () {
     salvarConsentimento("aceito");
     fechar();
-    carregarAnalytics();
   });
 
   banner.querySelector('[data-consentimento="recusar"]').addEventListener("click", function () {
     salvarConsentimento("recusado");
+    apagarCookiesGa();
     fechar();
-    // Scripts já carregados só saem da página com um recarregamento.
-    if (analyticsCarregado) location.reload();
   });
 
   botoesAbrir.forEach(function (b) {
@@ -121,7 +105,8 @@ function carregarAnalytics() {
 
 document.addEventListener("click", function (e) {
   var link = e.target.closest("[data-track]");
-  if (!link || !analyticsCarregado || !window.gtag) return;
+  // Sem consentimento o GA recebe o evento como ping anônimo, sem cookies
+  if (!link || !window.gtag) return;
   var evento = EVENTOS[link.dataset.track];
   if (!evento) return;
   var params = Object.assign({}, evento.params, { origem: link.dataset.origem || "" });
