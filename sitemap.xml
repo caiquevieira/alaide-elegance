@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://studioalaide.com.br/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-10-22</lastmod>
+    <image:image><image:loc>https://studioalaide.com.br/assets/img/hero-loiro-ondas.webp</image:loc></image:image>
+    <image:image><image:loc>https://studioalaide.com.br/assets/img/fachada-studio-alaide.webp</image:loc></image:image>
+    <image:image><image:loc>https://studioalaide.com.br/assets/img/g-loiro-platinado-ondas.webp</image:loc></image:image>
+    <image:image><image:loc>https://studioalaide.com.br/assets/img/g-loiro-perolado-raiz-esfumada.webp</image:loc></image:image>
+    <image:image><image:loc>https://studioalaide.com.br/assets/img/g-mechas-mel-fios-alinhados.webp</image:loc></image:image>
+    <image:image><image:loc>https://studioalaide.com.br/assets/img/g-balayage-caramelo-ondas.webp</image:loc></image:image>
+    <image:image><image:loc>https://studioalaide.com.br/assets/img/g-loiro-perolado-movimento.webp</image:loc></image:image>
+    <image:image><image:loc>https://studioalaide.com.br/assets/img/g-balayage-iluminado-fios-medios.webp</image:loc></image:image>
+    <image:image><image:loc>https://studioalaide.com.br/assets/img/g-morena-iluminada-cachos.webp</image:loc></image:image>
+    <image:image><image:loc>https://studioalaide.com.br/assets/img/g-ondas-volumosas-precisao.webp</image:loc></image:image>
   </url>
 </urlset>

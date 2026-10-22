@@ -1,3 +1,4 @@
+# Site aberto a buscadores e a assistentes de IA (Googlebot, Bingbot, GPTBot, ClaudeBot, PerplexityBot etc.)
 User-agent: *
 Allow: /
 
